@@ -1,6 +1,7 @@
 from settings import settings
 import discord
 from bot_logic import*
+from number import*
 # from bot_logic import *
 
 # A variável intents armazena as permissões do bot
@@ -22,9 +23,8 @@ async def on_message(message):
         await message.channel.send("Hello!")
     elif message.content.startswith("$coin"):
         await message.channel.send(coin())
-
-
-
+    if message.content.startswith("$guess_the_number"):
+        await message.channel.send(number())
     elif message.content.startswith('$bye'):
         await message.channel.send("\U0001f642")
     else:
